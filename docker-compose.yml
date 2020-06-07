@@ -2,6 +2,8 @@ version: '3'
 services:
   mariadb:
     image: mariadb:10.5
+    expose: 
+      - 3306
     environment: 
       MYSQL_DATABASE: hv_live_demo
       MYSQL_ROOT_PASSWORD: demopwd
@@ -27,4 +29,5 @@ services:
       - --spring.datasource.password=demopwd
   web:
     image: hvlive/demo-web:latest
-    ports: 10051:80
+    ports: 
+      - 10051:80
