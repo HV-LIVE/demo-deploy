@@ -5,3 +5,8 @@
 ```bash
 docker-compose up -d
 ```
+
+### 停止
+```bash
+docker-compose down
+```
