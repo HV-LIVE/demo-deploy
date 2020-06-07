@@ -34,3 +34,9 @@ services:
     image: hvlive/demo-web:latest
     ports: 
       - 10051:80
+  live:
+    restart: always
+    image: hvlive/demo-nginx-live:latest
+    ports: 
+      - 10052:1935
+      - 10053:80
