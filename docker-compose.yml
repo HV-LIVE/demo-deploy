@@ -1,6 +1,7 @@
 version: '3'
 services:
   mariadb:
+    restart: always
     image: mariadb:10.5
     expose: 
       - 3306
@@ -14,6 +15,7 @@ services:
       - --character-set-server=utf8mb4
       - --collation-server=utf8mb4_general_ci
   server:
+    restart: always
     image: hvlive/demo-server:latest
     ports: 
       - 10050:8080
@@ -28,6 +30,7 @@ services:
       - --spring.datasource.url=jdbc:mysql://mariadb:3306/hv_live_demo?serverTimezone=UTC&characterEncoding=UTF-8
       - --spring.datasource.password=demopwd
   web:
+    restart: always
     image: hvlive/demo-web:latest
     ports: 
       - 10051:80
